@@ -53,7 +53,7 @@ router.post('/create',uploadProduct.fields([ { name: 'image1', maxCount: 1 },
             if(req.files[field]  && req.files[field].length > 0)
             {
                 const file= req.files[field][0];
-                imageUrls.push({image: index+1,url:  `http://localhost:3000/image/product/${file.filename}`})
+                imageUrls.push({image: index+1,url:  `https://admindashboard-backend-gzfl.onrender.com/image/product/${file.filename}`})
             }
          });
          let variantIds;
@@ -107,7 +107,7 @@ router.put('/update/:id', uploadProduct.fields([
             if(req.files[field]  && req.files[field].length > 0)
             {
                 const file= req.files[field][0];
-                imageUrls.push({image: index+1,url:  `http://localhost:3000/image/product/${file.filename}`})
+                imageUrls.push({image: index+1,url:  `https://admindashboard-backend-gzfl.onrender.com/image/product/${file.filename}`})
             }
          });
          // Find the product by ID

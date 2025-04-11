@@ -30,7 +30,7 @@ router.get('/:id',async function(req,res){
 router.post('/create',uploadPoster.single('image'),async function(req,res){
 try{
     const {name}=req.body;
-    const image=req.file?`http://localhost:3000/image/poster/${req.file.filename}`:null;
+    const image=req.file?`https://admindashboard-backend-gzfl.onrender.com/image/poster/${req.file.filename}`:null;
     if(!name || !image)
     {
         return res.status(400).json({message:"name and image are required"});
@@ -48,7 +48,7 @@ catch(error){
 router.put('/update/:id',uploadPoster.single('image'), async function(req,res)
   {
        const {name}= req.body;
-       const image=req.file?`http://localhost:3000/image/poster/${req.file.filename}`:null;
+       const image=req.file?`https://admindashboard-backend-gzfl.onrender.com/image/poster/${req.file.filename}`:null;
     try {
         //find category by id
         const poster= await Poster.findById(req.params.id);

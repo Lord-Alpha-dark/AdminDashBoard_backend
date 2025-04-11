@@ -35,7 +35,7 @@ router.get('/:id', async function (req, res) {
 //create
 router.post('/create', uploadCategory.single('image'), async function (req, res) {
     const { name } = req.body;
-    const image = req.file ? `http://localhost:3000/image/category/${req.file.filename}` : null;
+    const image = req.file ? `https://admindashboard-backend-gzfl.onrender.com/image/category/${req.file.filename}` : null;
     console.log(req.file);
     // Validate the incoming data
     if (!name || !image) {
@@ -54,7 +54,7 @@ router.post('/create', uploadCategory.single('image'), async function (req, res)
 //update by id
 router.put('/update/:id', uploadCategory.single('image'), async function (req, res) {
     const { name } = req.body;//we can just use const { name } = req.body; because if name isn't provided, it'll simply be undefined
-    const image = req.file ? `http://localhost:3000/image/category/${req.file.filename}` : null;
+    const image = req.file ? `https://admindashboard-backend-gzfl.onrender.com/image/category/${req.file.filename}` : null;
     if (!name || !image) {
         res.status(400).json({ error: error.message });
     }
